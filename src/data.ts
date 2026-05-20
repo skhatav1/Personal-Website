@@ -1,15 +1,14 @@
 export const contact = {
   email: 'swarkhatav370@gmail.com',
-  alternateEmail: 'skhatav1@asu.edu',
   phone: '781-921-4558',
   location: 'Tempe, AZ',
   linkedin: 'https://www.linkedin.com/in/swarkhatav/',
   resume: '/Swar_Khatav_Resume_SWE.pdf',
 };
 
-export const emailHref = `mailto:${contact.email}?subject=${encodeURIComponent('Portfolio Inquiry')}&body=${encodeURIComponent(
-  'Hi Swar,\n\nI came across your portfolio and wanted to connect.\n\n',
-)}`;
+export const emailHref = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(
+  contact.email,
+)}&su=${encodeURIComponent('Portfolio Inquiry')}&body=${encodeURIComponent('Hi Swar,\n\nI came across your portfolio and wanted to connect.\n\n')}`;
 
 export const experiences = [
   {

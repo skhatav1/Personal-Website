@@ -23,7 +23,7 @@ export function Hero() {
               <MapPin size={16} className="text-cyan-300" />
               {contact.location}
             </span>
-            <a href={emailHref} className="inline-flex items-center gap-2 transition hover:text-cyan-200">
+            <a href={emailHref} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 transition hover:text-cyan-200">
               <Mail size={16} className="text-cyan-300" />
               {contact.email}
             </a>
@@ -32,7 +32,7 @@ export function Hero() {
             <a href="#projects" className="btn-primary">
               View Projects <ArrowDown size={18} />
             </a>
-            <a href={emailHref} className="btn-secondary">
+            <a href={emailHref} target="_blank" rel="noreferrer" className="btn-secondary">
               Contact Me <Mail size={18} />
             </a>
             <a href={contact.resume} target="_blank" rel="noreferrer" className="btn-secondary">

@@ -10,16 +10,11 @@ export function Contact() {
           <p className="text-lg leading-8 text-slate-300">
             I’m open to software engineering internships, full-time opportunities, and collaborative projects where thoughtful engineering can improve real workflows.
           </p>
-          <p className="mt-4 text-sm font-semibold text-slate-500">Primary email opens your email client directly.</p>
         </div>
         <div className="grid gap-4">
-          <a href={emailHref} className="contact-link">
+          <a href={emailHref} target="_blank" rel="noreferrer" className="contact-link">
             <Mail size={21} />
             <span>{contact.email}</span>
-          </a>
-          <a href={`mailto:${contact.alternateEmail}`} className="contact-link">
-            <Mail size={21} />
-            <span>{contact.alternateEmail}</span>
           </a>
           <a href={`tel:${contact.phone}`} className="contact-link">
             <Phone size={21} />
