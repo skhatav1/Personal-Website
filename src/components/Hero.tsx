@@ -1,5 +1,5 @@
-import { ArrowDown, Linkedin, Mail } from 'lucide-react';
-import { contact } from '../data';
+import { ArrowDown, FileText, Linkedin, Mail, MapPin } from 'lucide-react';
+import { contact, emailHref } from '../data';
 
 export function Hero() {
   return (
@@ -18,12 +18,25 @@ export function Hero() {
           <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
             I’m a Computer Science student at Arizona State University with experience in full-stack development, automation, API integration, and building scalable user-focused applications.
           </p>
+          <div className="mt-5 flex flex-wrap gap-3 text-sm font-semibold text-slate-400">
+            <span className="inline-flex items-center gap-2">
+              <MapPin size={16} className="text-cyan-300" />
+              {contact.location}
+            </span>
+            <a href={emailHref} className="inline-flex items-center gap-2 transition hover:text-cyan-200">
+              <Mail size={16} className="text-cyan-300" />
+              {contact.email}
+            </a>
+          </div>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
             <a href="#projects" className="btn-primary">
               View Projects <ArrowDown size={18} />
             </a>
-            <a href="#contact" className="btn-secondary">
+            <a href={emailHref} className="btn-secondary">
               Contact Me <Mail size={18} />
+            </a>
+            <a href={contact.resume} target="_blank" rel="noreferrer" className="btn-secondary">
+              Resume <FileText size={18} />
             </a>
             <a href={contact.linkedin} target="_blank" rel="noreferrer" className="btn-ghost">
               LinkedIn <Linkedin size={18} />
