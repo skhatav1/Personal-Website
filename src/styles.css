@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #050816;
+}
+
+@layer components {
+  .nav-link {
+    @apply text-sm font-semibold text-slate-400 transition hover:text-cyan-200;
+  }
+
+  .btn-primary,
+  .btn-secondary,
+  .btn-ghost {
+    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-bold transition duration-300;
+  }
+
+  .btn-primary {
+    @apply bg-cyan-300 text-slate-950 shadow-[0_16px_42px_rgba(34,211,238,0.2)] hover:-translate-y-0.5 hover:bg-cyan-200;
+  }
+
+  .btn-secondary {
+    @apply border border-white/10 bg-white/[0.06] text-white hover:-translate-y-0.5 hover:border-cyan-300/35 hover:bg-white/[0.09] hover:text-cyan-100;
+  }
+
+  .btn-ghost {
+    @apply bg-violet-300/10 text-violet-100 ring-1 ring-violet-300/20 hover:-translate-y-0.5 hover:bg-violet-300/15;
+  }
+
+  .info-card {
+    @apply flex gap-4 rounded-3xl border border-white/10 bg-white/[0.04] p-6 shadow-soft backdrop-blur;
+  }
+
+  .project-card {
+    @apply rounded-3xl border border-white/10 bg-white/[0.04] p-7 shadow-sm backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-cyan-300/35 hover:bg-white/[0.07] hover:shadow-soft;
+  }
+
+  .logo-card {
+    @apply flex min-h-24 items-center gap-4 rounded-3xl border border-white/10 bg-white/[0.04] p-5 shadow-sm backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-cyan-300/35 hover:bg-white/[0.08] hover:shadow-soft;
+  }
+
+  .contact-link {
+    @apply flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 px-5 py-4 font-semibold text-white transition hover:-translate-y-0.5 hover:border-blue-300/50 hover:bg-white/10;
+  }
+}
+
+@layer utilities {
+  .text-slate-650 {
+    color: rgb(71 85 105);
+  }
+
+  .animate-fade-up {
+    animation: fade-up 700ms ease-out both;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
