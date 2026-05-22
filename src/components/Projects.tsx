@@ -1,4 +1,4 @@
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, Github } from 'lucide-react';
 import { projects } from '../data';
 import { Section } from './Section';
 
@@ -27,6 +27,22 @@ export function Projects() {
                 </span>
               ))}
             </div>
+            {(project.liveUrl || project.githubUrl) && (
+              <div className="mt-7 flex flex-wrap gap-3">
+                {project.liveUrl && (
+                  <a className="btn-primary min-h-0 px-4 py-2" href={project.liveUrl} target="_blank" rel="noreferrer">
+                    Live demo
+                    <ArrowUpRight size={16} />
+                  </a>
+                )}
+                {project.githubUrl && (
+                  <a className="btn-secondary min-h-0 px-4 py-2" href={project.githubUrl} target="_blank" rel="noreferrer">
+                    <Github size={16} />
+                    GitHub
+                  </a>
+                )}
+              </div>
+            )}
           </article>
         ))}
       </div>

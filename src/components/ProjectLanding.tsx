@@ -1,4 +1,4 @@
-import { ArrowUpRight, Layers3 } from 'lucide-react';
+import { ArrowUpRight, Github, Layers3 } from 'lucide-react';
 import { projects } from '../data';
 import { Section } from './Section';
 
@@ -50,6 +50,22 @@ export function ProjectLanding() {
                     </span>
                   ))}
                 </div>
+                {(project.liveUrl || project.githubUrl) && (
+                  <div className="mt-7 flex flex-wrap gap-3">
+                    {project.liveUrl && (
+                      <a className="btn-primary" href={project.liveUrl} target="_blank" rel="noreferrer">
+                        Open live demo
+                        <ArrowUpRight size={17} />
+                      </a>
+                    )}
+                    {project.githubUrl && (
+                      <a className="btn-secondary" href={project.githubUrl} target="_blank" rel="noreferrer">
+                        <Github size={17} />
+                        View code
+                      </a>
+                    )}
+                  </div>
+                )}
               </div>
             </div>
           </article>

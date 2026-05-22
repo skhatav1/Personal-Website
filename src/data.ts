@@ -49,12 +49,14 @@ export const experiences = [
 export const projects = [
   {
     name: 'StudySync',
-    tech: ['React', 'TypeScript', 'Python', 'FastAPI', 'Docker', 'GCP', 'Kubernetes'],
-    signal: 'Hackathon Finalist',
+    tech: ['Flutter', 'Firebase Auth', 'Firestore', 'FastAPI', 'Python', 'Render', 'Vercel'],
+    signal: 'Live AI Product',
     accent: 'from-cyan-300 to-blue-500',
-    stats: ['1,000+ daily API requests', 'Kubernetes deployment', 'Jenkins CI/CD'],
+    stats: ['Live Vercel demo', 'Render FastAPI backend', 'Firebase real-time data'],
+    liveUrl: 'https://studysync-coral.vercel.app',
+    githubUrl: 'https://github.com/skhatav1/StudySync-',
     description:
-      'A full-stack AI-powered study platform with a React/TypeScript frontend and Python/FastAPI backend, deployed on GCP with Docker and Kubernetes for auto-scaling and high availability.',
+      'A full-stack AI-powered collaborative study planner that creates adaptive schedules, tracks study progress, manages resources, supports study groups, and transforms notes into summaries, flashcards, and quizzes.',
   },
   {
     name: 'SmartHealth Tracker',
