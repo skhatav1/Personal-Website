@@ -44,13 +44,7 @@ export function Hero() {
           </div>
         </div>
         <div className="animate-fade-up rounded-[2rem] border border-white/10 bg-white/[0.04] p-4 shadow-[0_24px_80px_rgba(0,0,0,0.32)] backdrop-blur">
-          <div className="overflow-hidden rounded-[1.5rem] border border-white/10 bg-[#08111f] text-white">
-            <div className="flex items-center gap-2 border-b border-white/10 px-5 py-4">
-              <span className="h-3 w-3 rounded-full bg-rose-400" />
-              <span className="h-3 w-3 rounded-full bg-amber-300" />
-              <span className="h-3 w-3 rounded-full bg-emerald-400" />
-              <span className="ml-3 text-xs font-semibold text-slate-400">portfolio.system</span>
-            </div>
+          <div className="overflow-hidden rounded-[1.5rem] border border-white/10 bg-[#08111f] p-4 text-white">
             <div className="p-6">
               <div className="mb-6 overflow-hidden rounded-[1.35rem] border border-white/10 bg-white/[0.04]">
                 <div className="relative mx-auto aspect-[4/5] max-h-[420px]">
