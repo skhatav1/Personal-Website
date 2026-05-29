@@ -52,13 +52,18 @@ export function Hero() {
               <span className="ml-3 text-xs font-semibold text-slate-400">portfolio.system</span>
             </div>
             <div className="p-6">
-              <div className="mb-6 flex items-center gap-4">
-                <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-300 to-violet-400 text-xl font-black text-slate-950">
-                  SMK
-                </div>
-                <div>
-                  <p className="text-sm text-slate-400">Candidate profile</p>
-                  <p className="font-semibold text-white">Full-stack development + automation</p>
+              <div className="mb-6 overflow-hidden rounded-[1.35rem] border border-white/10 bg-white/[0.04]">
+                <div className="relative aspect-[4/3]">
+                  <img
+                    src="/profile-portrait.png"
+                    alt="Portrait of Swar Mahesh Khatav"
+                    className="h-full w-full object-cover object-[center_22%]"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#08111f] via-[#08111f]/10 to-transparent" />
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <p className="text-sm text-cyan-200">Candidate profile</p>
+                    <p className="mt-1 text-lg font-semibold text-white">Full-stack development + automation</p>
+                  </div>
                 </div>
               </div>
               <div className="grid gap-4">
