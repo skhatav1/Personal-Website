@@ -53,16 +53,16 @@ export function Hero() {
             </div>
             <div className="p-6">
               <div className="mb-6 overflow-hidden rounded-[1.35rem] border border-white/10 bg-white/[0.04]">
-                <div className="relative aspect-[4/3]">
+                <div className="relative mx-auto aspect-[4/5] max-h-[420px]">
                   <img
                     src="/profile-portrait.png"
                     alt="Portrait of Swar Mahesh Khatav"
-                    className="h-full w-full object-cover object-[center_22%]"
+                    className="h-full w-full object-cover object-[center_18%]"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#08111f] via-[#08111f]/10 to-transparent" />
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <p className="text-sm text-cyan-200">Candidate profile</p>
-                    <p className="mt-1 text-lg font-semibold text-white">Full-stack development + automation</p>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#08111f] via-[#08111f]/20 to-transparent" />
+                  <div className="absolute bottom-4 left-4 right-4 rounded-2xl border border-white/10 bg-[#08111f]/75 p-4 backdrop-blur-md">
+                    <p className="text-sm font-semibold text-cyan-200">Candidate profile</p>
+                    <p className="mt-1 text-base font-semibold text-white">Full-stack development + automation</p>
                   </div>
                 </div>
               </div>
