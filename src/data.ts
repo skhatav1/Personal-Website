@@ -46,9 +46,38 @@ export const experiences = [
   },
 ];
 
+export const impactMetrics = [
+  { value: '4.0', label: 'ASU GPA', detail: 'B.S. Computer Science' },
+  { value: '40%', label: 'Ops reduction', detail: 'Python + Java automation' },
+  { value: '1k+', label: 'Visitors / requests', detail: 'Product and platform scale' },
+  { value: '2026', label: 'Graduation', detail: 'Open to SWE roles' },
+];
+
+export const focusAreas = [
+  {
+    title: 'Full-stack product engineering',
+    eyebrow: 'Frontend + Backend',
+    description: 'Builds polished user interfaces backed by REST APIs, auth flows, dashboards, and relational data models.',
+    stack: ['React', 'TypeScript', 'Go', 'PostgreSQL'],
+  },
+  {
+    title: 'Automation and data systems',
+    eyebrow: 'Efficiency',
+    description: 'Designs scripts, data validation, ETL workflows, monitoring, and reporting automation that reduce manual work.',
+    stack: ['Python', 'SQL', 'Docker', 'APIs'],
+  },
+  {
+    title: 'Cloud-ready application delivery',
+    eyebrow: 'Deployment',
+    description: 'Ships deployable applications with CI/CD awareness, containerized environments, and production-friendly architecture.',
+    stack: ['Vercel', 'GCP', 'Kubernetes', 'GitHub Actions'],
+  },
+];
+
 export const projects = [
   {
     name: 'StudySync',
+    category: 'AI Product',
     tech: ['Flutter', 'Firebase Auth', 'Firestore', 'FastAPI', 'Python', 'Render', 'Vercel'],
     signal: 'Live AI Product',
     accent: 'from-cyan-300 to-blue-500',
@@ -60,6 +89,7 @@ export const projects = [
   },
   {
     name: 'SmartHealth Tracker',
+    category: 'AI Analytics',
     tech: ['Python', 'Django', 'React', 'PostgreSQL'],
     signal: 'AI Analytics',
     accent: 'from-emerald-300 to-cyan-500',
@@ -69,6 +99,7 @@ export const projects = [
   },
   {
     name: 'EduLearn',
+    category: 'Full Stack',
     tech: ['Node.js', 'Express', 'React', 'PostgreSQL'],
     signal: 'Adaptive Learning',
     accent: 'from-violet-300 to-fuchsia-500',
@@ -78,6 +109,7 @@ export const projects = [
   },
   {
     name: 'Velocified LMS Enhancement',
+    category: 'Dashboard',
     tech: ['JavaScript', 'Backend Integration', 'Dashboard UI'],
     signal: 'Dashboard Systems',
     accent: 'from-amber-200 to-orange-500',

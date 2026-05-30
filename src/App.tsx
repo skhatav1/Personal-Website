@@ -2,8 +2,10 @@ import { About } from './components/About';
 import { Contact } from './components/Contact';
 import { Education } from './components/Education';
 import { Experience } from './components/Experience';
+import { FocusAreas } from './components/FocusAreas';
 import { Footer } from './components/Footer';
 import { Hero } from './components/Hero';
+import { ImpactStrip } from './components/ImpactStrip';
 import { Leadership } from './components/Leadership';
 import { Navbar } from './components/Navbar';
 import { ProjectLanding } from './components/ProjectLanding';
@@ -19,6 +21,8 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
+        <ImpactStrip />
+        <FocusAreas />
         <About />
         <Education />
         <TechShowcase />
