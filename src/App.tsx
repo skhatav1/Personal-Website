@@ -1,4 +1,5 @@
 import { About } from './components/About';
+import { CaseStudies } from './components/CaseStudies';
 import { Contact } from './components/Contact';
 import { Education } from './components/Education';
 import { Experience } from './components/Experience';
@@ -9,6 +10,7 @@ import { ImpactStrip } from './components/ImpactStrip';
 import { Leadership } from './components/Leadership';
 import { Navbar } from './components/Navbar';
 import { ProjectLanding } from './components/ProjectLanding';
+import { ProfileSnapshot } from './components/ProfileSnapshot';
 import { Projects } from './components/Projects';
 import { Skills } from './components/Skills';
 import { TechShowcase } from './components/TechShowcase';
@@ -23,11 +25,13 @@ export default function App() {
         <Hero />
         <ImpactStrip />
         <FocusAreas />
+        <ProfileSnapshot />
         <About />
         <Education />
         <TechShowcase />
         <Experience />
         <ProjectLanding />
+        <CaseStudies />
         <Projects />
         <Skills />
         <Leadership />

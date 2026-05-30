@@ -13,10 +13,10 @@ export function Hero() {
             Swar Mahesh Khatav
           </h1>
           <p className="mt-5 text-xl font-semibold text-slate-200 sm:text-2xl">
-            Computer Science Student | Software Developer | Full-Stack Developer
+            Software Engineer focused on full-stack systems, automation, and scalable product experiences.
           </p>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
-            I’m a Computer Science student at Arizona State University with experience in full-stack development, automation, API integration, and building scalable user-focused applications.
+            Computer Science student at Arizona State University with hands-on experience building production-minded web applications, backend APIs, database workflows, and automation systems.
           </p>
           <div className="mt-5 flex flex-wrap gap-3 text-sm font-semibold text-slate-400">
             <span className="inline-flex items-center gap-2">
@@ -61,7 +61,7 @@ export function Hero() {
                 </div>
               </div>
               <div className="grid gap-4">
-                {['Full-stack applications', 'Automation systems', 'API integrations', 'Data-driven products'].map((item) => (
+                {['React + TypeScript products', 'Go and Python services', 'PostgreSQL data workflows', 'Automation and APIs'].map((item) => (
                   <div key={item} className="flex items-center justify-between rounded-2xl bg-white/[0.045] px-4 py-4 ring-1 ring-white/10">
                     <span className="font-medium text-slate-200">{item}</span>
                     <span className="h-2.5 w-2.5 rounded-full bg-cyan-300 shadow-[0_0_18px_rgba(34,211,238,0.8)]" />

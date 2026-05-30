@@ -15,6 +15,7 @@ export const experiences = [
     role: 'Software Engineer Intern',
     company: 'Velocified LMS',
     date: 'Aug 2025 - May 2026',
+    tech: ['React', 'Go', 'PostgreSQL', 'REST APIs', 'Docker', 'CI/CD'],
     bullets: [
       'Developed full-stack LMS features using React, Go, PostgreSQL, and REST APIs across frontend, backend, and database layers.',
       'Designed backend API endpoints for authentication, session management, OTP verification, and password reset workflows using signed cookies and database-driven access control.',
@@ -26,6 +27,7 @@ export const experiences = [
     role: 'Technical Operations Specialist',
     company: 'School of Social Work, Arizona State University',
     date: 'July 2024 - Feb 2025',
+    tech: ['Python', 'Java', 'PostgreSQL', 'REST APIs', 'Docker', 'ETL'],
     bullets: [
       'Automated operational workflows and data processing pipelines using Python and Java, reducing manual processing overhead by 40%.',
       'Optimized SQL queries, indexing strategies, and PostgreSQL workflows to improve reporting and data retrieval performance.',
@@ -38,12 +40,20 @@ export const experiences = [
     role: 'Software Engineer Intern',
     company: 'Programmatix Institute',
     date: 'May 2023 - Aug 2023',
+    tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'SEO', 'Performance'],
     bullets: [
       'Developed a full-stack web application using Next.js, TypeScript, and Tailwind CSS with scalable, responsive user-facing features.',
       'Created a dynamic article publishing system to improve content management and publishing efficiency.',
       'Collaborated with two UI/UX designers to build a responsive interface with SEO and performance optimizations, helping the website reach over 1,000 visitors.',
     ],
   },
+];
+
+export const profileSnapshot = [
+  { label: 'Role target', value: 'Software Engineer / Full-stack Developer' },
+  { label: 'Strongest stack', value: 'React, TypeScript, Go, Python, PostgreSQL' },
+  { label: 'Product focus', value: 'Dashboards, automation, APIs, AI-enabled tools' },
+  { label: 'Availability', value: 'Open to SWE internships and new grad roles' },
 ];
 
 export const impactMetrics = [
@@ -86,6 +96,11 @@ export const projects = [
     githubUrl: 'https://github.com/skhatav1/StudySync-',
     description:
       'A full-stack AI-powered collaborative study planner that creates adaptive schedules, tracks study progress, manages resources, supports study groups, and transforms notes into summaries, flashcards, and quizzes.',
+    caseStudy: {
+      problem: 'Students need a single workspace for planning, study groups, materials, and AI-assisted review instead of scattered tools.',
+      build: 'Built a full-stack product with Firebase auth/data, FastAPI services, AI study tools, resource management, and a deployed frontend/backend split.',
+      outcome: 'Shipped a live demo with real-time study workflows, AI-generated learning assets, and a production-style deployment path.',
+    },
   },
   {
     name: 'SmartHealth Tracker',
@@ -96,6 +111,11 @@ export const projects = [
     stats: ['Health insights', 'Realtime charts', 'PostgreSQL data'],
     description:
       'An AI-driven health tracking system that provides personalized fitness and nutrition recommendations with a real-time analytics dashboard.',
+    caseStudy: {
+      problem: 'Health data is difficult to interpret without personalized insights and clear trend visualization.',
+      build: 'Designed a Django/React application with PostgreSQL-backed data models, recommendation logic, and dashboard analytics.',
+      outcome: 'Created a cleaner way to monitor habits, surface patterns, and translate metrics into actionable recommendations.',
+    },
   },
   {
     name: 'EduLearn',
@@ -106,6 +126,11 @@ export const projects = [
     stats: ['REST APIs', 'AI personalization', 'Learning analytics'],
     description:
       'An adaptive learning platform that customizes educational content based on learning styles using data analytics and AI. Includes REST API integration for external educational tools.',
+    caseStudy: {
+      problem: 'Static learning platforms do not adapt well to different student preferences and progress patterns.',
+      build: 'Built REST API integrations and adaptive content flows with React, Express, Node.js, and PostgreSQL.',
+      outcome: 'Presented a scalable learning architecture that personalizes content and supports external educational tooling.',
+    },
   },
   {
     name: 'Velocified LMS Enhancement',
@@ -116,6 +141,11 @@ export const projects = [
     stats: ['Manager views', 'Progress charts', 'Role-based UI'],
     description:
       'Enhanced an LMS platform by improving manager dashboards, connecting backend functionality, fixing UI issues, adding progress charts, and supporting role-based dashboard features.',
+    caseStudy: {
+      problem: 'Managers and coaches needed clearer visibility into learner progress and role-specific reporting.',
+      build: 'Improved dashboard UI, backend data connections, progress charts, and role-aware workflows.',
+      outcome: 'Made LMS reporting more actionable and easier to navigate for operational users.',
+    },
   },
 ];
 

@@ -1,14 +1,13 @@
-import { Menu, X } from 'lucide-react';
+import { FileText, Linkedin, Menu, X } from 'lucide-react';
 import { useState } from 'react';
+import { contact } from '../data';
 
 const links = [
   { label: 'Focus', href: '#focus' },
-  { label: 'About', href: '#about' },
-  { label: 'Education', href: '#education' },
+  { label: 'Snapshot', href: '#snapshot' },
   { label: 'Stack', href: '#stack' },
   { label: 'Experience', href: '#experience' },
-  { label: 'Featured', href: '#featured' },
-  { label: 'Skills', href: '#skills' },
+  { label: 'Case Studies', href: '#case-studies' },
   { label: 'Contact', href: '#contact' },
 ];
 
@@ -27,6 +26,14 @@ export function Navbar() {
               {link.label}
             </a>
           ))}
+          <div className="flex items-center gap-2 border-l border-white/10 pl-5">
+            <a href={contact.resume} target="_blank" rel="noreferrer" className="nav-icon-link" aria-label="Open resume">
+              <FileText size={17} />
+            </a>
+            <a href={contact.linkedin} target="_blank" rel="noreferrer" className="nav-icon-link" aria-label="Open LinkedIn">
+              <Linkedin size={17} />
+            </a>
+          </div>
         </div>
         <button
           type="button"
@@ -45,6 +52,9 @@ export function Navbar() {
                 {link.label}
               </a>
             ))}
+            <a href={contact.resume} target="_blank" rel="noreferrer" className="rounded-lg px-3 py-2 text-sm font-medium text-slate-300 hover:bg-white/5 hover:text-white">
+              Resume
+            </a>
           </div>
         </div>
       )}

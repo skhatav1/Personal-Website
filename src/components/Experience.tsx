@@ -28,6 +28,13 @@ export function Experience() {
                 </li>
               ))}
             </ul>
+            <div className="mt-6 flex flex-wrap gap-2">
+              {experience.tech.map((tech) => (
+                <span key={tech} className="rounded-full bg-white/[0.06] px-3 py-1.5 text-sm font-semibold text-cyan-100 ring-1 ring-white/10">
+                  {tech}
+                </span>
+              ))}
+            </div>
           </article>
         ))}
       </div>
