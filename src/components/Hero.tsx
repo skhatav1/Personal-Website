@@ -29,7 +29,7 @@ export function Hero() {
             </a>
           </div>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-            <a href="#projects" className="btn-primary">
+            <a href="/projects" className="btn-primary">
               View Projects <ArrowDown size={18} />
             </a>
             <a href={emailHref} target="_blank" rel="noreferrer" className="btn-secondary">

@@ -3,12 +3,11 @@ import { useState } from 'react';
 import { contact } from '../data';
 
 const links = [
-  { label: 'Focus', href: '#focus' },
-  { label: 'Snapshot', href: '#snapshot' },
-  { label: 'Stack', href: '#stack' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Case Studies', href: '#case-studies' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Projects', href: '/projects' },
+  { label: 'Experience', href: '/experience' },
+  { label: 'Stack', href: '/stack' },
+  { label: 'Profile', href: '/profile' },
+  { label: 'Contact', href: '/contact' },
 ];
 
 export function Navbar() {
@@ -17,7 +16,7 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-[#050816]/80 backdrop-blur-xl">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 lg:px-8" aria-label="Main navigation">
-        <a href="#home" className="text-sm font-bold tracking-wide text-white">
+        <a href="/" className="text-sm font-bold tracking-wide text-white">
           Swar Khatav
         </a>
         <div className="hidden items-center gap-7 md:flex">
