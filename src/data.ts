@@ -103,6 +103,23 @@ export const projects = [
     },
   },
   {
+    name: 'Campus Bites',
+    category: 'Full Stack API',
+    tech: ['FastAPI', 'Pydantic', 'SQLAlchemy', 'SQLite', 'Alembic', 'Vanilla JavaScript', 'Render', 'Vercel'],
+    signal: 'Campus Meal Platform',
+    accent: 'from-rose-200 to-orange-500',
+    stats: ['CRUD meal API', 'Student-facing frontend', 'Render backend'],
+    liveUrl: 'https://campus-bites-api.vercel.app',
+    githubUrl: 'https://github.com/skhatav1/campus-bites-api',
+    description:
+      'A campus meal discovery platform with a FastAPI backend and static frontend for browsing meals, searching and filtering listings, saving favorites, building a local meal plan, and managing menu items through admin tools.',
+    caseStudy: {
+      problem: 'Students need a simple way to discover campus meal options, compare prices, save favorites, and build a quick meal plan.',
+      build: 'Built a FastAPI CRUD backend with Pydantic validation, SQLAlchemy models, SQLite persistence, Alembic migrations, CORS configuration, health checks, pytest coverage, and a static JavaScript frontend.',
+      outcome: 'Delivered a deployable full-stack app with a Render backend, Vercel-ready frontend, API status handling, search/filter UX, favorites, local meal planning, and admin menu management.',
+    },
+  },
+  {
     name: 'SmartHealth Tracker',
     category: 'AI Analytics',
     tech: ['Python', 'Django', 'React', 'PostgreSQL'],
