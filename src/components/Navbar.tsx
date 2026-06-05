@@ -20,11 +20,21 @@ export function Navbar() {
           Swar Khatav
         </a>
         <div className="hidden items-center gap-7 md:flex">
-          {links.map((link) => (
-            <a key={link.href} href={link.href} className="nav-link">
-              {link.label}
-            </a>
-          ))}
+          {links.map((link) => {
+            const active = window.location.pathname === link.href;
+            return (
+              <a
+                key={link.href}
+                href={link.href}
+                className={`nav-link relative ${active ? 'text-cyan-200' : ''}`}
+              >
+                {link.label}
+                {active && (
+                  <span className="absolute -bottom-1 left-0 h-[2px] w-full rounded-full bg-gradient-to-r from-cyan-400 to-violet-400" />
+                )}
+              </a>
+            );
+          })}
           <div className="flex items-center gap-2 border-l border-white/10 pl-5">
             <a href={contact.resume} target="_blank" rel="noreferrer" className="nav-icon-link" aria-label="Open resume">
               <FileText size={17} />

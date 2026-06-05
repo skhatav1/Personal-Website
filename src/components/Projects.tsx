@@ -1,6 +1,7 @@
 import { ArrowUpRight, Github } from 'lucide-react';
 import { useMemo, useState } from 'react';
 import { projects } from '../data';
+import { RevealCard } from './RevealCard';
 import { Section } from './Section';
 
 export function Projects() {
@@ -32,8 +33,9 @@ export function Projects() {
         ))}
       </div>
       <div className="grid gap-6 md:grid-cols-2">
-        {visibleProjects.map((project) => (
-          <article key={project.name} className="project-card group">
+        {visibleProjects.map((project, i) => (
+          <RevealCard key={project.name} delay={i * 80}>
+          <article className="project-card group h-full">
             <div className="flex items-start justify-between gap-4">
               <div>
                 <p className="mb-2 text-xs font-black uppercase tracking-[0.2em] text-cyan-300">{project.category}</p>
@@ -68,6 +70,7 @@ export function Projects() {
               </div>
             )}
           </article>
+          </RevealCard>
         ))}
       </div>
     </Section>

@@ -1,5 +1,6 @@
 import { ArrowDown, FileText, Linkedin, Mail, MapPin } from 'lucide-react';
 import { contact, emailHref } from '../data';
+import { TypeWriter } from './TypeWriter';
 
 export function Hero() {
   return (
@@ -13,7 +14,14 @@ export function Hero() {
             Swar Mahesh Khatav
           </h1>
           <p className="mt-5 text-xl font-semibold text-slate-200 sm:text-2xl">
-            Software Engineer focused on full-stack systems, automation, and scalable product experiences.
+            <TypeWriter
+              phrases={[
+                'Software Engineer focused on full-stack systems.',
+                'Building scalable APIs and dashboards.',
+                'Automating workflows with Python and Go.',
+                'Shipping production-minded web applications.',
+              ]}
+            />
           </p>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
             Computer Science student at Arizona State University with hands-on experience building production-minded web applications, backend APIs, database workflows, and automation systems.

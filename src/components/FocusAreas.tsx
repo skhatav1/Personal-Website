@@ -1,5 +1,6 @@
 import { Braces, CloudCog, Workflow } from 'lucide-react';
 import { focusAreas } from '../data';
+import { RevealCard } from './RevealCard';
 import { Section } from './Section';
 
 const icons = [Braces, Workflow, CloudCog];
@@ -16,7 +17,8 @@ export function FocusAreas() {
         {focusAreas.map((area, index) => {
           const Icon = icons[index];
           return (
-            <article key={area.title} className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] p-6 shadow-soft backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-cyan-300/35 hover:bg-white/[0.07]">
+            <RevealCard key={area.title} delay={index * 100}>
+            <article className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] p-6 shadow-soft backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-cyan-300/35 hover:bg-white/[0.07] h-full">
               <div className="absolute -right-8 -top-8 h-28 w-28 rounded-full bg-cyan-300/10 blur-2xl transition group-hover:bg-violet-300/15" />
               <div className="relative">
                 <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-300/10 text-cyan-300 ring-1 ring-cyan-300/20">
@@ -34,6 +36,7 @@ export function FocusAreas() {
                 </div>
               </div>
             </article>
+            </RevealCard>
           );
         })}
       </div>
