@@ -1,35 +1,9 @@
 import { Footer } from './components/Footer';
 import { Navbar } from './components/Navbar';
 import { ScrollProgress } from './components/ScrollProgress';
-import { ContactPage } from './pages/ContactPage';
-import { ExperiencePage } from './pages/ExperiencePage';
 import { HomePage } from './pages/HomePage';
-import { ProfilePage } from './pages/ProfilePage';
-import { ProjectsPage } from './pages/ProjectsPage';
-import { StackPage } from './pages/StackPage';
-
-function getPage(pathname: string) {
-  switch (pathname) {
-    case '/':
-      return <HomePage />;
-    case '/projects':
-      return <ProjectsPage />;
-    case '/experience':
-      return <ExperiencePage />;
-    case '/stack':
-      return <StackPage />;
-    case '/profile':
-      return <ProfilePage />;
-    case '/contact':
-      return <ContactPage />;
-    default:
-      return <HomePage />;
-  }
-}
 
 export default function App() {
-  const page = getPage(window.location.pathname);
-
   return (
     <div className="min-h-screen overflow-hidden bg-[#050816] text-slate-100">
       <ScrollProgress />
@@ -39,7 +13,9 @@ export default function App() {
       <div className="orb orb-2 pointer-events-none fixed -z-10" />
       <div className="orb orb-3 pointer-events-none fixed -z-10" />
       <Navbar />
-      <main>{page}</main>
+      <main>
+        <HomePage />
+      </main>
       <Footer />
     </div>
   );
