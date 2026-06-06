@@ -5,71 +5,72 @@ import { RevealCard } from './RevealCard';
 import { Section } from './Section';
 
 export function Projects() {
-  const categories = useMemo(() => ['All', ...Array.from(new Set(projects.map((project) => project.category)))], []);
-  const [activeCategory, setActiveCategory] = useState('All');
-  const visibleProjects = activeCategory === 'All' ? projects : projects.filter((project) => project.category === activeCategory);
+  const categories = useMemo(() => ['All', ...Array.from(new Set(projects.map((p) => p.category)))], []);
+  const [active, setActive] = useState('All');
+  const visible = active === 'All' ? projects : projects.filter((p) => p.category === active);
 
   return (
     <Section
       id="projects"
+      number="02"
       eyebrow="Projects"
-      title="Selected work across AI, web platforms, and operational dashboards"
-      description="A focused set of projects that show practical product thinking, full-stack implementation, and integrations with modern APIs."
+      title="Selected work across AI, web platforms, and dashboards"
+      description="A focused set of projects showing full-stack thinking, backend APIs, and deployment-ready architecture."
     >
-      <div className="mb-7 flex flex-wrap gap-2">
-        {categories.map((category) => (
+      {/* Filter tabs */}
+      <div className="mb-8 flex flex-wrap gap-2">
+        {categories.map((cat) => (
           <button
-            key={category}
+            key={cat}
             type="button"
-            onClick={() => setActiveCategory(category)}
-            className={`rounded-full px-4 py-2 text-sm font-bold transition ${
-              activeCategory === category
-                ? 'bg-cyan-300 text-slate-950 shadow-[0_14px_32px_rgba(34,211,238,0.18)]'
-                : 'bg-white/[0.05] text-slate-300 ring-1 ring-white/10 hover:bg-white/[0.09] hover:text-white'
+            onClick={() => setActive(cat)}
+            className={`rounded-full px-4 py-2 font-mono text-xs font-semibold uppercase tracking-[0.16em] transition ${
+              active === cat
+                ? 'bg-amber-400 text-slate-950 shadow-amber-lg'
+                : 'border border-white/[0.08] bg-white/[0.04] text-slate-400 hover:border-amber-400/25 hover:text-amber-400'
             }`}
           >
-            {category}
+            {cat}
           </button>
         ))}
       </div>
-      <div className="grid gap-6 md:grid-cols-2">
-        {visibleProjects.map((project, i) => (
+
+      <div className="grid gap-5 md:grid-cols-2">
+        {visible.map((project, i) => (
           <RevealCard key={project.name} delay={i * 80}>
-          <article className="project-card group h-full">
-            <div className="flex items-start justify-between gap-4">
-              <div>
-                <p className="mb-2 text-xs font-black uppercase tracking-[0.2em] text-cyan-300">{project.category}</p>
-                <h3 className="text-2xl font-bold tracking-tight text-white">{project.name}</h3>
+            <article className="project-card group h-full flex flex-col">
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-amber-400">{project.category}</p>
+                  <h3 className="mt-2 text-xl font-bold tracking-tight text-white">{project.name}</h3>
+                </div>
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-white/[0.08] bg-white/[0.04] text-slate-400 transition group-hover:border-amber-400/30 group-hover:bg-amber-400/[0.08] group-hover:text-amber-400">
+                  <ArrowUpRight size={16} />
+                </div>
               </div>
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/[0.06] text-slate-300 ring-1 ring-white/10 transition group-hover:bg-cyan-300 group-hover:text-slate-950">
-                <ArrowUpRight size={19} />
+              <p className="mt-4 flex-1 text-sm leading-7 text-slate-400">{project.description}</p>
+              <div className="mt-5 flex flex-wrap gap-1.5">
+                {project.tech.map((t) => (
+                  <span key={t} className="rounded-full border border-white/[0.06] bg-[#07070c] px-2.5 py-1 font-mono text-[11px] text-slate-500">
+                    {t}
+                  </span>
+                ))}
               </div>
-            </div>
-            <p className="mt-4 leading-7 text-slate-300">{project.description}</p>
-            <div className="mt-6 flex flex-wrap gap-2">
-              {project.tech.map((tech) => (
-                <span key={tech} className="rounded-full bg-cyan-300/10 px-3 py-1.5 text-sm font-semibold text-cyan-200 ring-1 ring-cyan-300/20">
-                  {tech}
-                </span>
-              ))}
-            </div>
-            {(project.liveUrl || project.githubUrl) && (
-              <div className="mt-7 flex flex-wrap gap-3">
-                {project.liveUrl && (
-                  <a className="btn-primary min-h-0 px-4 py-2" href={project.liveUrl} target="_blank" rel="noreferrer">
-                    Live demo
-                    <ArrowUpRight size={16} />
-                  </a>
-                )}
-                {project.githubUrl && (
-                  <a className="btn-secondary min-h-0 px-4 py-2" href={project.githubUrl} target="_blank" rel="noreferrer">
-                    <Github size={16} />
-                    GitHub
-                  </a>
-                )}
-              </div>
-            )}
-          </article>
+              {(project.liveUrl || project.githubUrl) && (
+                <div className="mt-6 flex flex-wrap gap-2">
+                  {project.liveUrl && (
+                    <a className="btn-primary min-h-0 px-4 py-2 text-xs" href={project.liveUrl} target="_blank" rel="noreferrer">
+                      Live demo <ArrowUpRight size={14} />
+                    </a>
+                  )}
+                  {project.githubUrl && (
+                    <a className="btn-secondary min-h-0 px-4 py-2 text-xs" href={project.githubUrl} target="_blank" rel="noreferrer">
+                      <Github size={14} /> GitHub
+                    </a>
+                  )}
+                </div>
+              )}
+            </article>
           </RevealCard>
         ))}
       </div>

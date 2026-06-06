@@ -9,23 +9,23 @@ function MetricCard({ value, label, detail, delay }: { value: string; label: str
   return (
     <article
       ref={ref as React.RefObject<HTMLElement>}
-      className="reveal-card rounded-3xl border border-white/10 bg-white/[0.04] p-5 shadow-soft backdrop-blur"
+      className="reveal-card rounded-2xl border border-white/[0.07] bg-[#0d0d16] p-6"
       style={{ animationDelay: `${delay}ms` }}
       data-visible={inView}
     >
-      <p className="text-3xl font-black tracking-tight text-white">{count}</p>
-      <p className="mt-2 text-sm font-bold uppercase tracking-[0.18em] text-cyan-300">{label}</p>
-      <p className="mt-2 text-sm leading-6 text-slate-400">{detail}</p>
+      <p className="text-4xl font-extrabold tracking-tight text-white">{count}</p>
+      <p className="mt-2 font-mono text-xs font-semibold uppercase tracking-[0.2em] text-amber-400">{label}</p>
+      <p className="mt-1.5 text-sm text-slate-500">{detail}</p>
     </article>
   );
 }
 
 export function ImpactStrip() {
   return (
-    <section className="px-5 pb-8 lg:px-8">
+    <section className="px-5 pb-6 lg:px-8">
       <div className="mx-auto grid max-w-6xl gap-3 sm:grid-cols-2 lg:grid-cols-4">
-        {impactMetrics.map((metric, i) => (
-          <MetricCard key={metric.label} {...metric} delay={i * 80} />
+        {impactMetrics.map((m, i) => (
+          <MetricCard key={m.label} {...m} delay={i * 80} />
         ))}
       </div>
     </section>

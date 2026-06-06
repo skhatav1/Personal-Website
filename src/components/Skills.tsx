@@ -3,27 +3,28 @@ import { Marquee } from './Marquee';
 import { Section } from './Section';
 
 export function Skills() {
+  const allItems = skills.flatMap((g) => g.items);
   const rows = [
-    skills.flatMap((g) => g.items).slice(0, 30),
-    skills.flatMap((g) => g.items).slice(10, 40),
-    skills.flatMap((g) => g.items).slice(20),
+    allItems.slice(0, 28),
+    allItems.slice(8, 36),
+    allItems.slice(16),
   ];
 
   return (
     <Section id="skills" eyebrow="Skills" title="Technical toolkit">
-      <div className="grid gap-4">
-        <Marquee items={rows[0]} direction="left" speed={28} />
-        <Marquee items={rows[1]} direction="right" speed={32} />
-        <Marquee items={rows[2]} direction="left" speed={24} />
+      <div className="grid gap-3">
+        <Marquee items={rows[0]} direction="left" speed={30} />
+        <Marquee items={rows[1]} direction="right" speed={34} />
+        <Marquee items={rows[2]} direction="left" speed={26} />
       </div>
 
-      <div className="mt-10 grid gap-5 md:grid-cols-2">
+      <div className="mt-10 grid gap-4 md:grid-cols-2">
         {skills.map((group) => (
-          <article key={group.category} className="rounded-3xl border border-white/10 bg-white/[0.04] p-6 backdrop-blur transition duration-300 hover:border-violet-300/30 hover:bg-white/[0.07]">
-            <h3 className="mb-4 text-sm font-bold uppercase tracking-[0.2em] text-violet-300">{group.category}</h3>
+          <article key={group.category} className="card card-hover">
+            <h3 className="mb-4 font-mono text-xs font-semibold uppercase tracking-[0.2em] text-amber-400">{group.category}</h3>
             <div className="flex flex-wrap gap-2">
               {group.items.map((skill) => (
-                <span key={skill} className="rounded-full bg-white/[0.06] px-3 py-1.5 text-sm font-medium text-slate-300 ring-1 ring-white/10 transition hover:ring-violet-300/40 hover:text-violet-200">
+                <span key={skill} className="rounded-full border border-white/[0.06] bg-[#07070c] px-3 py-1 font-mono text-xs text-slate-500 transition hover:border-amber-400/20 hover:text-amber-300">
                   {skill}
                 </span>
               ))}

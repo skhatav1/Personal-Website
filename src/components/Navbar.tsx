@@ -3,21 +3,19 @@ import { useEffect, useState } from 'react';
 import { contact } from '../data';
 
 const links = [
-  { label: 'About', href: '#about' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Stack', href: '#stack' },
-  { label: 'Contact', href: '#contact' },
+  { label: '01', name: 'About',      href: '#about' },
+  { label: '02', name: 'Experience', href: '#experience' },
+  { label: '03', name: 'Projects',   href: '#projects' },
+  { label: '04', name: 'Stack',      href: '#stack' },
+  { label: '05', name: 'Contact',    href: '#contact' },
 ];
 
 const sectionIds = links.map((l) => l.href.slice(1));
 
 function useActiveSection() {
   const [active, setActive] = useState('');
-
   useEffect(() => {
     const observers: IntersectionObserver[] = [];
-
     sectionIds.forEach((id) => {
       const el = document.getElementById(id);
       if (!el) return;
@@ -28,10 +26,8 @@ function useActiveSection() {
       obs.observe(el);
       observers.push(obs);
     });
-
     return () => observers.forEach((o) => o.disconnect());
   }, []);
-
   return active;
 }
 
@@ -39,69 +35,66 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const active = useActiveSection();
 
-  const handleAnchor = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const scroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     if (!href.startsWith('#')) return;
     e.preventDefault();
-    const el = document.getElementById(href.slice(1));
-    el?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById(href.slice(1))?.scrollIntoView({ behavior: 'smooth' });
     setIsOpen(false);
   };
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-[#050816]/80 backdrop-blur-xl">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 lg:px-8" aria-label="Main navigation">
-        <a href="#home" onClick={(e) => handleAnchor(e, '#home')} className="text-sm font-bold tracking-wide text-white">
-          Swar Khatav
+    <header className="sticky top-0 z-50 border-b border-white/[0.06] bg-[#07070c]/85 backdrop-blur-xl">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 lg:px-8">
+        <a href="#home" onClick={(e) => scroll(e, '#home')} className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-white hover:text-amber-400 transition">
+          SK
         </a>
-        <div className="hidden items-center gap-7 md:flex">
+        <div className="hidden items-center gap-8 md:flex">
           {links.map((link) => {
             const isActive = active === link.href.slice(1);
             return (
               <a
                 key={link.href}
                 href={link.href}
-                onClick={(e) => handleAnchor(e, link.href)}
-                className={`nav-link relative transition-colors ${isActive ? 'text-cyan-200' : ''}`}
+                onClick={(e) => scroll(e, link.href)}
+                className={`nav-link relative group flex items-center gap-1.5 ${isActive ? 'text-amber-400' : ''}`}
               >
-                {link.label}
+                <span className="font-mono text-[10px] text-white/25 group-hover:text-amber-400/50 transition">{link.label}</span>
+                {link.name}
                 {isActive && (
-                  <span className="absolute -bottom-1 left-0 h-[2px] w-full rounded-full bg-gradient-to-r from-cyan-400 to-violet-400" />
+                  <span className="absolute -bottom-[17px] left-0 h-[1px] w-full bg-gradient-to-r from-amber-400 to-amber-400/0" />
                 )}
               </a>
             );
           })}
-          <div className="flex items-center gap-2 border-l border-white/10 pl-5">
-            <a href={contact.resume} target="_blank" rel="noreferrer" className="nav-icon-link" aria-label="Open resume">
-              <FileText size={17} />
+          <div className="flex items-center gap-2 border-l border-white/[0.08] pl-6">
+            <a href={contact.resume} target="_blank" rel="noreferrer" className="nav-icon-link" aria-label="Resume">
+              <FileText size={15} />
             </a>
-            <a href={contact.linkedin} target="_blank" rel="noreferrer" className="nav-icon-link" aria-label="Open LinkedIn">
-              <Linkedin size={17} />
+            <a href={contact.linkedin} target="_blank" rel="noreferrer" className="nav-icon-link" aria-label="LinkedIn">
+              <Linkedin size={15} />
             </a>
           </div>
         </div>
         <button
           type="button"
-          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-slate-200 md:hidden"
-          aria-label="Toggle navigation"
+          className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/[0.08] text-slate-300 md:hidden"
           onClick={() => setIsOpen((v) => !v)}
         >
-          {isOpen ? <X size={19} /> : <Menu size={19} />}
+          {isOpen ? <X size={17} /> : <Menu size={17} />}
         </button>
       </nav>
       {isOpen && (
-        <div className="border-t border-white/10 bg-[#07101f] px-5 py-4 md:hidden">
-          <div className="mx-auto grid max-w-6xl gap-3">
+        <div className="border-t border-white/[0.06] bg-[#07070c] px-5 py-5 md:hidden">
+          <div className="grid gap-1">
             {links.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={(e) => handleAnchor(e, link.href)}
-                className="rounded-lg px-3 py-2 text-sm font-medium text-slate-300 hover:bg-white/5 hover:text-white"
-              >
-                {link.label}
+              <a key={link.href} href={link.href} onClick={(e) => scroll(e, link.href)}
+                className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-slate-300 hover:bg-white/5 hover:text-white">
+                <span className="font-mono text-[10px] text-white/25">{link.label}</span>
+                {link.name}
               </a>
             ))}
-            <a href={contact.resume} target="_blank" rel="noreferrer" className="rounded-lg px-3 py-2 text-sm font-medium text-slate-300 hover:bg-white/5 hover:text-white">
+            <a href={contact.resume} target="_blank" rel="noreferrer"
+              className="flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium text-slate-300 hover:bg-white/5 hover:text-white">
               Resume
             </a>
           </div>

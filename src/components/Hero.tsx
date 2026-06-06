@@ -8,104 +8,128 @@ import { TypeWriter } from './TypeWriter';
 
 export function Hero() {
   return (
-    <section id="home" className="relative overflow-hidden px-5 py-20 sm:py-24 lg:px-8 lg:py-28">
+    <section id="home" className="relative flex min-h-screen flex-col justify-center overflow-hidden px-5 lg:px-8">
       <ParticleField />
-      <div className="relative mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[1.15fr_0.85fr]">
-        <div className="animate-fade-up">
-          <div className="mb-5 flex flex-wrap items-center gap-3">
-            <p className="inline-flex rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-sm font-semibold text-cyan-200 shadow-[0_0_32px_rgba(34,211,238,0.12)]">
-              Arizona State University • Computer Science • GPA 4.0
+
+      <div className="relative mx-auto w-full max-w-6xl py-24 lg:py-32">
+        <div className="grid items-center gap-16 lg:grid-cols-[1.2fr_0.8fr]">
+
+          {/* Left — text content */}
+          <div className="animate-fade-up">
+            {/* Status badge */}
+            <div className="mb-8 flex flex-wrap items-center gap-3">
+              <span className="inline-flex items-center gap-2 rounded-full border border-amber-400/20 bg-amber-400/[0.08] px-4 py-1.5 font-mono text-xs font-semibold uppercase tracking-[0.18em] text-amber-400">
+                <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-amber-400" />
+                Available for SWE roles
+              </span>
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/[0.08] bg-white/[0.04] px-4 py-1.5 font-mono text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">
+                <Zap size={11} className="text-amber-400" />
+                Currently @ Velocified LMS
+              </span>
+            </div>
+
+            {/* Name */}
+            <h1 className="text-[clamp(3rem,8vw,5.5rem)] font-extrabold leading-[0.95] tracking-tight text-white">
+              Swar<br />
+              <span className="text-white/30">Khatav</span>
+            </h1>
+
+            {/* Typewriter role */}
+            <p className="mt-6 text-xl font-semibold text-slate-300 sm:text-2xl">
+              <TypeWriter
+                phrases={[
+                  'Software Engineer. Full-stack systems.',
+                  'Building APIs and dashboards in Go.',
+                  'Automating workflows with Python.',
+                  'Shipping production-ready products.',
+                ]}
+              />
             </p>
-            <span className="inline-flex items-center gap-2 rounded-full border border-emerald-400/25 bg-emerald-400/10 px-4 py-2 text-sm font-semibold text-emerald-300">
-              <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-400" />
-              <Zap size={13} />
-              SWE Intern @ Velocified LMS
-            </span>
-          </div>
-          <h1 className="max-w-4xl text-5xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl">
-            Swar Mahesh Khatav
-          </h1>
-          <p className="mt-5 text-xl font-semibold text-slate-200 sm:text-2xl">
-            <TypeWriter
-              phrases={[
-                'Software Engineer focused on full-stack systems.',
-                'Building scalable APIs and dashboards.',
-                'Automating workflows with Python and Go.',
-                'Shipping production-minded web applications.',
-              ]}
-            />
-          </p>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
-            Computer Science student at Arizona State University with hands-on experience building production-minded web applications, backend APIs, database workflows, and automation systems.
-          </p>
-          <div className="mt-5 flex flex-wrap gap-3 text-sm font-semibold text-slate-400">
-            <span className="inline-flex items-center gap-2">
-              <MapPin size={16} className="text-cyan-300" />
-              {contact.location}
-            </span>
-            <a href={emailHref} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 transition hover:text-cyan-200">
-              <Mail size={16} className="text-cyan-300" />
-              {contact.email}
-            </a>
-          </div>
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-            <MagneticButton href="#projects" className="btn-primary">
-              View Projects <ArrowDown size={18} />
-            </MagneticButton>
-            <MagneticButton href={emailHref} target="_blank" rel="noreferrer" className="btn-secondary">
-              Contact Me <Mail size={18} />
-            </MagneticButton>
-            <MagneticButton href={contact.resume} target="_blank" rel="noreferrer" className="btn-secondary">
-              Resume <FileText size={18} />
-            </MagneticButton>
-            <MagneticButton href={contact.linkedin} target="_blank" rel="noreferrer" className="btn-ghost">
-              LinkedIn <Linkedin size={18} />
-            </MagneticButton>
-          </div>
 
-          <div className="mt-10">
-            <TerminalSnippet />
-          </div>
-        </div>
+            <p className="mt-5 max-w-xl text-base leading-8 text-slate-500">
+              CS student at Arizona State University. Hands-on with React, TypeScript, Go, Python, and PostgreSQL — from auth flows to ETL pipelines.
+            </p>
 
-        <TiltCard className="animate-fade-up rounded-[2rem] border border-white/10 bg-white/[0.04] p-4 shadow-[0_24px_80px_rgba(0,0,0,0.32)] backdrop-blur">
-          <div className="overflow-hidden rounded-[1.5rem] border border-white/10 bg-[#08111f] p-4 text-white">
-            <div className="p-6">
-              <div className="mb-6 overflow-hidden rounded-[1.35rem] border border-white/10 bg-white/[0.04]">
-                <div className="relative mx-auto aspect-[4/5] max-h-[420px]">
-                  <img
-                    src="/profile-portrait.png"
-                    alt="Portrait of Swar Mahesh Khatav"
-                    className="h-full w-full object-cover object-[center_18%]"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#08111f] via-[#08111f]/20 to-transparent" />
-                  <div className="absolute bottom-4 left-4 right-4 rounded-2xl border border-white/10 bg-[#08111f]/75 p-4 backdrop-blur-md">
-                    <p className="text-sm font-semibold text-cyan-200">Candidate profile</p>
-                    <p className="mt-1 text-base font-semibold text-white">Full-stack development + automation</p>
-                  </div>
-                </div>
-              </div>
-              <div className="grid gap-4">
-                {['React + TypeScript products', 'Go and Python services', 'PostgreSQL data workflows', 'Automation and APIs'].map((item) => (
-                  <div key={item} className="flex items-center justify-between rounded-2xl bg-white/[0.045] px-4 py-4 ring-1 ring-white/10">
-                    <span className="font-medium text-slate-200">{item}</span>
-                    <span className="h-2.5 w-2.5 rounded-full bg-cyan-300 shadow-[0_0_18px_rgba(34,211,238,0.8)]" />
-                  </div>
-                ))}
-              </div>
-              <div className="mt-6 grid grid-cols-2 gap-4">
-                <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">GPA</p>
-                  <p className="mt-2 text-3xl font-bold text-cyan-200">4.0</p>
-                </div>
-                <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-400">Graduation</p>
-                  <p className="mt-2 text-2xl font-bold text-violet-200">May 2026</p>
-                </div>
-              </div>
+            {/* Location / email */}
+            <div className="mt-5 flex flex-wrap gap-4 font-mono text-xs font-semibold uppercase tracking-[0.16em] text-slate-600">
+              <span className="flex items-center gap-2">
+                <MapPin size={13} className="text-amber-400" />
+                {contact.location}
+              </span>
+              <a href={emailHref} target="_blank" rel="noreferrer" className="flex items-center gap-2 transition hover:text-amber-400">
+                <Mail size={13} className="text-amber-400" />
+                {contact.email}
+              </a>
+            </div>
+
+            {/* CTAs */}
+            <div className="mt-10 flex flex-wrap gap-3">
+              <MagneticButton href="#projects" className="btn-primary">
+                View Work <ArrowDown size={16} />
+              </MagneticButton>
+              <MagneticButton href={contact.resume} target="_blank" rel="noreferrer" className="btn-secondary">
+                Resume <FileText size={16} />
+              </MagneticButton>
+              <MagneticButton href={contact.linkedin} target="_blank" rel="noreferrer" className="btn-ghost">
+                LinkedIn <Linkedin size={16} />
+              </MagneticButton>
+            </div>
+
+            {/* Terminal */}
+            <div className="mt-12">
+              <TerminalSnippet />
             </div>
           </div>
-        </TiltCard>
+
+          {/* Right — profile card */}
+          <TiltCard className="animate-fade-up">
+            <div className="rounded-2xl border border-white/[0.08] bg-[#0d0d16] p-5">
+              {/* Photo */}
+              <div className="overflow-hidden rounded-xl border border-white/[0.06]">
+                <div className="relative aspect-[4/5] max-h-[380px]">
+                  <img
+                    src="/profile-portrait.png"
+                    alt="Swar Mahesh Khatav"
+                    className="h-full w-full object-cover object-[center_18%]"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d16] via-[#0d0d16]/15 to-transparent" />
+                  <div className="absolute bottom-4 left-4 right-4 rounded-xl border border-white/[0.08] bg-[#0d0d16]/80 p-3 backdrop-blur-md">
+                    <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-amber-400">Profile</p>
+                    <p className="mt-1 text-sm font-semibold text-white">Full-stack · Automation · APIs</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Stats */}
+              <div className="mt-4 grid grid-cols-2 gap-3">
+                <div className="rounded-xl border border-white/[0.06] bg-[#07070c] p-4">
+                  <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-slate-600">GPA</p>
+                  <p className="mt-1.5 text-2xl font-bold text-amber-400">4.0</p>
+                </div>
+                <div className="rounded-xl border border-white/[0.06] bg-[#07070c] p-4">
+                  <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-slate-600">Grad</p>
+                  <p className="mt-1.5 text-xl font-bold text-violet-300">May '26</p>
+                </div>
+              </div>
+
+              {/* Stack pills */}
+              <div className="mt-3 flex flex-wrap gap-2">
+                {['React', 'Go', 'Python', 'PostgreSQL'].map((t) => (
+                  <span key={t} className="rounded-full border border-white/[0.06] bg-[#07070c] px-3 py-1 font-mono text-xs text-slate-400">
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </TiltCard>
+
+        </div>
+      </div>
+
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-30">
+        <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-slate-500">Scroll</span>
+        <div className="h-8 w-px bg-gradient-to-b from-slate-500 to-transparent" />
       </div>
     </section>
   );

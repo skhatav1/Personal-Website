@@ -5,35 +5,37 @@ import { Section } from './Section';
 
 export function Experience() {
   return (
-    <Section id="experience" eyebrow="Experience" title="Software engineering and technical operations experience">
-      <div className="relative grid gap-6">
-        {experiences.map((experience, i) => (
-          <RevealCard key={experience.role} delay={i * 100}>
-            <article className="group rounded-3xl border border-white/10 bg-white/[0.04] p-7 backdrop-blur transition duration-300 hover:-translate-y-1 hover:border-cyan-300/35 hover:bg-white/[0.07] hover:shadow-soft">
+    <Section id="experience" number="01" eyebrow="Experience" title="Engineering roles & technical work">
+      <div className="relative grid gap-5">
+        {experiences.map((exp, i) => (
+          <RevealCard key={exp.role} delay={i * 100}>
+            <article className="group card card-hover">
               <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                 <div className="flex gap-4">
-                  <div className="mt-1 flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-cyan-300/10 text-cyan-300 ring-1 ring-cyan-300/20">
-                    <Briefcase size={21} />
+                  <div className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-amber-400/20 bg-amber-400/[0.08] text-amber-400">
+                    <Briefcase size={18} />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-white">{experience.role}</h3>
-                    <p className="mt-1 font-medium text-slate-400">{experience.company}</p>
+                    <h3 className="text-lg font-bold text-white">{exp.role}</h3>
+                    <p className="mt-0.5 text-sm font-medium text-slate-500">{exp.company}</p>
                   </div>
                 </div>
-                <p className="rounded-full bg-white/[0.06] px-4 py-2 text-sm font-semibold text-slate-300 ring-1 ring-white/10">{experience.date}</p>
+                <span className="shrink-0 rounded-full border border-white/[0.08] bg-white/[0.04] px-3 py-1.5 font-mono text-xs text-slate-400">
+                  {exp.date}
+                </span>
               </div>
-              <ul className="mt-6 grid gap-3 text-slate-300">
-                {experience.bullets.map((bullet) => (
-                  <li key={bullet} className="flex gap-3 leading-7">
-                    <span className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-300" />
+              <ul className="mt-5 grid gap-2.5 text-slate-400">
+                {exp.bullets.map((bullet) => (
+                  <li key={bullet} className="flex gap-3 text-sm leading-7">
+                    <span className="mt-[10px] h-1 w-1 shrink-0 rounded-full bg-amber-400" />
                     <span>{bullet}</span>
                   </li>
                 ))}
               </ul>
-              <div className="mt-6 flex flex-wrap gap-2">
-                {experience.tech.map((tech) => (
-                  <span key={tech} className="rounded-full bg-white/[0.06] px-3 py-1.5 text-sm font-semibold text-cyan-100 ring-1 ring-white/10">
-                    {tech}
+              <div className="mt-5 flex flex-wrap gap-2">
+                {exp.tech.map((t) => (
+                  <span key={t} className="rounded-full border border-white/[0.06] bg-[#07070c] px-3 py-1 font-mono text-xs text-slate-500">
+                    {t}
                   </span>
                 ))}
               </div>
