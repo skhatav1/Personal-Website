@@ -8,7 +8,7 @@ export function Experience() {
     <Section id="experience" number="01" eyebrow="Experience" title="Engineering roles & technical work">
       <div className="relative grid gap-5">
         {experiences.map((exp, i) => (
-          <RevealCard key={exp.role} delay={i * 100}>
+          <RevealCard key={exp.role} delay={i * 80} direction={i % 2 === 0 ? 'left' : 'right'}>
             <article className="group card card-hover">
               <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                 <div className="flex gap-4">

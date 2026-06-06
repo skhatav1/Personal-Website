@@ -1,4 +1,5 @@
 import { About } from '../components/About';
+import { AnimatedDivider } from '../components/AnimatedDivider';
 import { Contact } from '../components/Contact';
 import { Education } from '../components/Education';
 import { Experience } from '../components/Experience';
@@ -10,29 +11,25 @@ import { Projects } from '../components/Projects';
 import { Skills } from '../components/Skills';
 import { TechShowcase } from '../components/TechShowcase';
 
-function Divider() {
-  return <div className="section-divider mx-5 lg:mx-8" />;
-}
-
 export function HomePage() {
   return (
     <>
       <Hero />
       <ImpactStrip />
-      <Divider />
+      <AnimatedDivider />
       <About />
-      <Divider />
+      <AnimatedDivider />
       <FocusAreas />
-      <Divider />
+      <AnimatedDivider />
       <Experience />
       <Education />
       <Leadership />
-      <Divider />
+      <AnimatedDivider />
       <Projects />
-      <Divider />
+      <AnimatedDivider />
       <TechShowcase />
       <Skills />
-      <Divider />
+      <AnimatedDivider />
       <Contact />
     </>
   );
