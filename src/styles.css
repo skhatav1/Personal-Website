@@ -158,3 +158,29 @@ body {
   left: 30%;
   animation: float-slow 18s ease-in-out infinite reverse;
 }
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes marquee-right {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+
+.animate-marquee {
+  animation: marquee linear infinite;
+}
+
+.animate-marquee-right {
+  animation: marquee-right linear infinite;
+}
+
+.section-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(148,163,184,0.08) 30%, rgba(148,163,184,0.08) 70%, transparent);
+  margin: 0 auto;
+  max-width: 72rem;
+  padding: 0 2rem;
+}

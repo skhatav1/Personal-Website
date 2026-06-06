@@ -1,15 +1,27 @@
-import { ArrowDown, FileText, Linkedin, Mail, MapPin } from 'lucide-react';
+import { ArrowDown, FileText, Linkedin, Mail, MapPin, Zap } from 'lucide-react';
 import { contact, emailHref } from '../data';
+import { MagneticButton } from './MagneticButton';
+import { ParticleField } from './ParticleField';
+import { TerminalSnippet } from './TerminalSnippet';
+import { TiltCard } from './TiltCard';
 import { TypeWriter } from './TypeWriter';
 
 export function Hero() {
   return (
     <section id="home" className="relative overflow-hidden px-5 py-20 sm:py-24 lg:px-8 lg:py-28">
-      <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[1.15fr_0.85fr]">
+      <ParticleField />
+      <div className="relative mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[1.15fr_0.85fr]">
         <div className="animate-fade-up">
-          <p className="mb-5 inline-flex rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-sm font-semibold text-cyan-200 shadow-[0_0_32px_rgba(34,211,238,0.12)]">
-            Arizona State University • Computer Science • GPA 4.0
-          </p>
+          <div className="mb-5 flex flex-wrap items-center gap-3">
+            <p className="inline-flex rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-sm font-semibold text-cyan-200 shadow-[0_0_32px_rgba(34,211,238,0.12)]">
+              Arizona State University • Computer Science • GPA 4.0
+            </p>
+            <span className="inline-flex items-center gap-2 rounded-full border border-emerald-400/25 bg-emerald-400/10 px-4 py-2 text-sm font-semibold text-emerald-300">
+              <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-400" />
+              <Zap size={13} />
+              SWE Intern @ Velocified LMS
+            </span>
+          </div>
           <h1 className="max-w-4xl text-5xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl">
             Swar Mahesh Khatav
           </h1>
@@ -37,21 +49,26 @@ export function Hero() {
             </a>
           </div>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-            <a href="/projects" className="btn-primary">
+            <MagneticButton href="#projects" className="btn-primary">
               View Projects <ArrowDown size={18} />
-            </a>
-            <a href={emailHref} target="_blank" rel="noreferrer" className="btn-secondary">
+            </MagneticButton>
+            <MagneticButton href={emailHref} target="_blank" rel="noreferrer" className="btn-secondary">
               Contact Me <Mail size={18} />
-            </a>
-            <a href={contact.resume} target="_blank" rel="noreferrer" className="btn-secondary">
+            </MagneticButton>
+            <MagneticButton href={contact.resume} target="_blank" rel="noreferrer" className="btn-secondary">
               Resume <FileText size={18} />
-            </a>
-            <a href={contact.linkedin} target="_blank" rel="noreferrer" className="btn-ghost">
+            </MagneticButton>
+            <MagneticButton href={contact.linkedin} target="_blank" rel="noreferrer" className="btn-ghost">
               LinkedIn <Linkedin size={18} />
-            </a>
+            </MagneticButton>
+          </div>
+
+          <div className="mt-10">
+            <TerminalSnippet />
           </div>
         </div>
-        <div className="animate-fade-up rounded-[2rem] border border-white/10 bg-white/[0.04] p-4 shadow-[0_24px_80px_rgba(0,0,0,0.32)] backdrop-blur">
+
+        <TiltCard className="animate-fade-up rounded-[2rem] border border-white/10 bg-white/[0.04] p-4 shadow-[0_24px_80px_rgba(0,0,0,0.32)] backdrop-blur">
           <div className="overflow-hidden rounded-[1.5rem] border border-white/10 bg-[#08111f] p-4 text-white">
             <div className="p-6">
               <div className="mb-6 overflow-hidden rounded-[1.35rem] border border-white/10 bg-white/[0.04]">
@@ -88,7 +105,7 @@ export function Hero() {
               </div>
             </div>
           </div>
-        </div>
+        </TiltCard>
       </div>
     </section>
   );
